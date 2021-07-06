@@ -1,0 +1,218 @@
+$white: #ffffff;
+$grey-a:#333;
+$grey-b:#333333;
+$grey-c:#888888;
+$grey-d:#eee;
+$grey-e:#ddd;
+$grey-f:#acafb3;
+$red:#CF2323;
+$green:#0FC57C;
+
+@mixin circleMaker($value) {
+  height: $value;
+  width:$value;
+  border-radius: 50%;
+}
+
+.d-none{
+  display: none;
+}
+
+.d-block {
+  display: block;
+}
+
+.d-flex {
+  display: flex;
+}
+
+
+.font-lato {
+  		font-family: Lato, sans-serif;
+}
+.cursor-pointer
+{
+  cursor: pointer;
+}
+
+
+html {
+	body {
+		background: $white;
+		color: $grey-a;
+    @extend .font-lato;
+		.container
+    {
+			max-width: 600px;
+			margin: 100px auto 0;
+		}
+		ul {
+			margin: 0px;
+			padding: 0;
+			li {
+				input[type=text] {
+          @extend .d-none;
+				}
+			}
+			li.editMode {
+				input[type=text] {
+					@extend .d-block;
+				}
+				label {
+          @extend .d-none;
+				}
+			}
+		}
+		li {
+      @extend .d-flex;
+      align-items: center;
+			list-style: none;
+			padding: 20px 0px;
+			border-bottom: 1px solid $grey-d;
+			>input[type="checkbox"] {
+				margin: 0 10px;
+			}
+			>label {
+				font-size: 18px;
+				width: 237px;
+				padding: 0 0 0 11px;
+        word-break: break-all;
+			}
+			>input[type="text"] {
+				width: 226px;
+			}
+			>.delete {
+				&:hover {
+					color: $red;
+				}
+			}
+		}
+		h3 {
+			color: $grey-b;
+      font : {
+        weight: 700;
+        size: 15px;
+      }
+			border-bottom: 2px solid $grey-a;
+			padding: 30px 0 10px;
+			margin: 0px;
+			text-transform: uppercase;
+		}
+		input {
+			outline: none;
+		}
+		button {
+			outline: none;
+			background: none;
+			border: 0px;
+			color: $grey-c;
+			font-size: 15px;
+			width: 60px;
+			@extend .font-lato;
+  		@extend .cursor-pointer;
+			&:hover {
+				color: $grey-a;
+			}
+		}
+		label[for='new-task'] {
+			color: $grey-b;
+			font : {
+        weight: 700;
+        size: 15px;
+      }
+			border-bottom: 2px solid $grey-a;
+			padding: 30px 0 10px;
+			margin: 0px;
+			text-transform: uppercase;
+      &.custom-margin {
+        margin: 0 0 20px ;
+      }
+		}
+		input[type="text"] {
+			margin: 0;
+			font-size: 18px;
+			line-height: 18px;
+			height: 18px;
+			padding: 10px;
+			border: 1px solid $grey-e;
+			background: $white;
+			border-radius: 6px;
+      @extend .font-lato;
+      color: $grey-c;
+			&:focus {
+				color: $grey-a;
+			}
+		}
+
+		input#new-task {
+			width: 60%;
+		}
+
+    .input-wrapper {
+			>button {
+				&:hover {
+					color: $green;
+				}
+			}
+		}
+
+		#completed-tasks {
+			label {
+				text-decoration: line-through;
+				color: $grey-c;
+			}
+		}
+
+
+    /* Custom Loader */
+    #loader
+    {
+    background:linear-gradient(grey, $grey-f);
+    /* Show only 10px from the border */
+    -webkit-mask:radial-gradient(farthest-side,transparent calc(100% - 10px),$white 0);
+            mask:radial-gradient(farthest-side,transparent calc(100% - 10px),$white 0);
+    @include circleMaker(100px);
+    position: fixed;
+    top: calc(50% - 50px);
+    left: calc(50% - 50px);
+    animation: rot 2s linear infinite;
+    }
+
+    @keyframes rot {
+     100% { transform: rotate(360deg); }
+    }
+
+    .animate-bottom {
+      position: relative;
+      -webkit-animation-name: animatebottom;
+      -webkit-animation-duration: 1s;
+      animation-name: animatebottom;
+      animation-duration: 1s
+    }
+
+    @-webkit-keyframes animatebottom {
+      from { bottom:-100px; opacity:0 }
+      to { bottom:0px; opacity:1 }
+    }
+
+    @keyframes animatebottom {
+      from{ bottom:-100px; opacity:0 }
+      to{ bottom:0; opacity:1 }
+    }
+    /* Custom Loader */
+
+    input
+    {
+      @extend .cursor-pointer;
+    }
+
+    /* Custom textbox validation */
+    .error
+    {
+      border-style: solid !important;
+      border-color: red !important;
+    }
+    /* Custom textbox validation */
+
+	}
+}

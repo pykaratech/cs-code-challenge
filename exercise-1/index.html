@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Exercise-1</title>
+  <link rel="stylesheet" href="stylesheets/style.css">
+</head>
+<body>
+    <ul class="custom-ul custom-card-4" id="ul_element">
+      <script id="my-template" type="text/x-handlebars-template">
+        {{#each this}}
+        <li class="custom-bar">
+          <img src='{{avatar}}' alt="avatar"  onerror="imgError(this);" class="custom-bar-item custom-circle custom-hide-small">
+          <div class="custom-bar-item">
+          <span class="custom-large">{{name}}</span><br>
+          <span>ID : {{id}}</span><br>
+          <span>Created date: {{formatDateTime createdAt}}</span><br>
+          </div>
+        </li>
+        {{/each}}
+      </script>
+    </ul>
+  </body>
+  <!-- Include Handlebars from a CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="javascripts/custom.js"></script>
+
+<script>
+   fetchApiData();
+ </script>
+
+</html>

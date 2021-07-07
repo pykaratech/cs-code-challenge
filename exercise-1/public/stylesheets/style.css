@@ -1,0 +1,54 @@
+
+  html, body {
+    font-family: Verdana,sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+}
+body {
+    margin: 0;
+}
+
+.custom-card-4, .custom-hover-shadow:hover {
+box-shadow: 0 4px 10px 0 rgb(0 0 0 / 20%), 0 4px 20px 0 rgb(0 0 0 / 19%);
+}
+.custom-ul {
+list-style-type: none;
+padding: 0;
+margin: 0;
+}
+.custom-ul li {
+    padding: 8px 16px;
+    border-bottom: 1px solid #ddd;
+}
+
+.custom-container:after, .custom-container:before, .custom-panel:after, .custom-panel:before, .custom-row:after, .custom-row:before, .custom-row-padding:after, .custom-row-padding:before, .custom-cell-row:before, .custom-cell-row:after, .custom-clear:after, .custom-clear:before, .custom-bar:before, .custom-bar:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+.custom-bar .custom-bar-item {
+    padding: 8px 16px;
+    float: left;
+    width: auto;
+    border: none;
+    display: block;
+    outline: 0;
+}
+
+img {
+    vertical-align: middle;
+}
+
+
+.custom-large {
+    font-size: 18px!important;
+}
+.custom-circle {
+    border-radius: 50%;
+        width:65px !important;
+}

@@ -14,12 +14,12 @@ let currentItemList=[
                     ];
 
 // Get itemlist from Local storage
-getLocatStorage = (storageName) => {
+getLocalStorage = (storageName) => {
   return localStorage.getItem(storageName);
 }
 
 // Set item list array  object into local storage
-setLocatStorage = (itemList) => {
+setLocalStorage = (itemList) => {
   let myJSON = JSON.stringify(itemList);
   localStorage.setItem("itemlistStorage",myJSON);
   localStorage.setItem("storageflag",true);
@@ -76,7 +76,7 @@ updateArray =(id,item_name,deleteStatus,taskStatus) => {
       }
     }
   });
-  setLocatStorage(currentItemList);
+  setLocalStorage(currentItemList);
 };
 
 //Events starts
@@ -91,7 +91,7 @@ addTask = () => {
     currentItemList.push(new_array);
 
     loopTaskElement(currentItemList);
-    setLocatStorage(currentItemList);
+    setLocalStorage(currentItemList);
     taskInput.value = "";
   }
   else
@@ -244,8 +244,8 @@ loaderToggle=(status) => {
 
 //intialize the page with default values
 initPage = () => {
-  const storagelist = getLocatStorage("itemlistStorage");
-  const storageflag = getLocatStorage("storageflag");
+  const storagelist = getLocalStorage("itemlistStorage");
+  const storageflag = getLocalStorage("storageflag");
   if(storagelist && storagelist!="" && storageflag)
   {
     const itemList=JSON.parse(storagelist);
